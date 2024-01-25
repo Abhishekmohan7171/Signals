@@ -2,26 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is about ANGULAR SIGNALS 
 
-## Code scaffolding
+What are Signals?
+Signals have an easy-to-understand API for reporting data changes to the framework, allowing the framework to optimize change detection and re-rendering in a way that so far was just not possible.With Signals, Angular will be able to determine exactly what parts of the page need to be updated and update only those and nothing more.This comes in contrast with what currently happens with for example default change detection, where Angular has to check all the components on the page, even if the data that they consume didn't change.Signals are all about enabling very fine-grained updates to the DOM that are just not possible with the current change detection systems that we have available.Signals are all about increasing the runtime performance of your application, by getting rid of Zone.js.Even without the runtime performance benefits, signals are just a great way to build applications in reactive style in general.Signals are also way easier to use and understand than RxJS when it comes to propagating data changes throughout an application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Signals are a game changer, and they take reactivity in Angular to a whole new level!♥️
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The computed() Signal API
+Signals can be created and derived from other signals. When a signal updates, all its dependent signals will then get updated automatically.The computed API works by taking in one or more source signals, and creating a new signal.When the source signal changes (in our case the counter signal), the computed signal derivedCounter gets updated as well, instantly.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Untracked() API
+By using the untracked API, we can access the value of the counter signal without creating a dependency between the counter and the derivedCounter signal.
